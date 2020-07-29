@@ -1,0 +1,38 @@
+{% extends "bootstrap/base.html" %}
+
+{% block styles %}
+{{ super() }}
+    <link href="{{url_for('static', filename='styles.css')}}" rel="stylesheet">
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    
+    <script src="{{url_for('static', filename='stacked_graph1.js')}}"></script>
+    
+
+{% endblock styles %}
+
+{% block navbar %}
+<div class='navbar navbar-inverse navbar-static-top'>
+    <div class='container'>
+        <div class='.navbar-header'>
+            <a href='#' class='navbar-brand'>Profiling Proof of Concept</a>
+        </div>
+    </div>
+</div>
+{% endblock navbar %}
+
+{% block content %}
+<div id="outer">
+    <div id="inner">
+        <div class='panel panel-warning'>
+            <div class='panel-heading'>
+                Graph
+            </div>
+            <div class='panel-body'>                
+                <svg width='960' height='500'></svg>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+

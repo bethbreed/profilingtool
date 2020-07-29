@@ -1,0 +1,16 @@
+body {
+    margin: 0px;
+}
+
+#outer {
+    width: 100%;
+    text-align: center;
+}
+
+#inner {
+    display: inline-block;
+}
+
+text {
+    text-anchor: middle;
+}
