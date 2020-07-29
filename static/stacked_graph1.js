@@ -7,7 +7,11 @@ const render = data => {
     const xScale = d3.scaleLinear()
         .domain([0, d3.max(data, d => d.group_1)])
         .range([0, width]);
-    
+    const yScale = d3.scaleBand() 
+        .domain(data.map(d => d.Dates))
+        //.range();
+    console.log(yScale.domain())
+
     svg.selectAll('rect').data(data)
      .enter().append('rect')
         .attr('width', d => xScale(d.group_1))
