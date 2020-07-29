@@ -9,13 +9,13 @@ const render = data => {
         .range([0, width]);
     const yScale = d3.scaleBand() 
         .domain(data.map(d => d.Dates))
-        //.range();
-    console.log(yScale.domain())
+        .range([0, height]);
 
     svg.selectAll('rect').data(data)
      .enter().append('rect')
+        .attr('y', d => yScale(d.Dates))
         .attr('width', d => xScale(d.group_1))
-        .attr('height', 300)
+        .attr('height', yScale.bandwidth())
 };
 
 d3.csv('static/dataset1.csv').then(data => {
