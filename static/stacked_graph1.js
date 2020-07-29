@@ -5,13 +5,12 @@ const height = +svg.attr('height');
 
 const render = data => {
     const xScale = d3.scaleLinear()
-        .domain([0, d3.max(data, d => d.group_1)]);
+        .domain([0, d3.max(data, d => d.group_1)])
+        .range([0, width]);
     
-    console.log(xScale.domain())
-
     svg.selectAll('rect').data(data)
      .enter().append('rect')
-        .attr('width', 300)
+        .attr('width', d => xScale(d.group_1))
         .attr('height', 300)
 };
 
