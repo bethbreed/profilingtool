@@ -6,8 +6,7 @@
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
     
-    <script src="{{url_for('static', filename='stacked_graph1.js')}}"></script>
-    
+        
 
 {% endblock styles %}
 
@@ -29,10 +28,14 @@
                 Graph
             </div>
             <div class='panel-body'>                
-                <svg width='960' height='500'></svg>
+                <svg width='960' height='1000'></svg>
             </div>
         </div>
     </div>
 </div>
 {% endblock content %}
-
+{% block scripts %}
+     <script src = {{url_for('static', filename='stacked_graph1.js')}}></script>
+{{ super() }}
+<!-- scripts here -->
+{% endblock scripts %}
